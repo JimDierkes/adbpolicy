@@ -1,0 +1,30 @@
+References
+https://github.com/Azure/azure-policy/blob/master/samples/TextPatterns/allow-multiple-name-patterns/README.md
+https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule
+Link to video overview of Policy versioning: https://youtu.be/eejdoDgofZ8
+
+
+workspace naming convention: "app name" + "dbw" + "env" + "- databricks" 
+resource group naming convention: "app name" + "dbw" + "env" + "-region(east or west)"
+
+*dbwperf-databricks
+*dbwprd-databricks
+*dbwwnp-databricks
+
+
+*dbwperf-east
+*dbwprd-east
+*dbwwnp-east
+*dbwperf-west
+*dbwprd-west
+*dbwwnp-west
+
+Tag : ManagedBy : Terraform
+
+
+Policies
+  Check Tag
+  ResourceGroupName - Done
+  WorkspaceName - Done
+  NOPIP - Done
+  Location EAST Only - Done

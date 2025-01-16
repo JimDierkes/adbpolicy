@@ -1,0 +1,20 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Databricks/workspaces"
+      },
+      {
+        "field": "location",
+        "notIn": [
+          "eastus",
+          "westus"
+        ]
+      }
+    ]
+  },
+  "then": {
+    "effect": "[parameters('effect')]"
+  }
+}

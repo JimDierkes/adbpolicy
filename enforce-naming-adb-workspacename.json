@@ -1,0 +1,31 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Databricks/workspaces"
+      },
+      {
+        "not": {
+          "anyOf": [
+            {
+              "value": "name",
+              "like": "*dbwperf-databricks"
+            },
+            {
+              "value": "name",
+              "like": "*dbwprd-databricks"
+            },
+            {
+              "value": "name",
+              "like": "*dbwwnp-databricks"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "[parameters('effect')]"
+  }
+}

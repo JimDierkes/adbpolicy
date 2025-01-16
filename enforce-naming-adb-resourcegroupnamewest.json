@@ -1,0 +1,35 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Databricks/workspaces"
+      },
+      {
+        "field": "location",
+        "equals": "westus"
+      },
+      {
+        "not": {
+          "anyOf": [
+            {
+              "value": "[resourceGroup().name]",
+              "like": "*dbwprd-west"
+            },
+            {
+              "value": "[resourceGroup().name]",
+              "like": "*dbwperf-west"
+            },
+            {
+              "value": "[resourceGroup().name]",
+              "like": "*dbwwnp-west"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "[parameters('effect')]"
+  }
+}
